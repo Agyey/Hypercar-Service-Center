@@ -16,9 +16,11 @@ Including another URLconf
 from django.urls import path
 from tickets.views import WelcomeView
 from tickets.views import MenuView
+from tickets.views import GetTicketView
 
 
 urlpatterns = [
     path('welcome/', WelcomeView.as_view()),
     path('menu/', MenuView.as_view()),
+    path('get_ticket/<service_name>', GetTicketView.as_view()),
 ]
