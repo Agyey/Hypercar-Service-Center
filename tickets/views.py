@@ -52,3 +52,15 @@ class GetTicketView(View):
             'ticket_number': ticket_number,
             'wait_time': wait_time
         })
+
+
+class ProcessingView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, r'tickets\process.html', context={
+            'oil_change_queue': oil_change_queue,
+            'inflating_queue': inflating_queue,
+            'diagnostic_queue': diagnostic_queue
+        })
+
+    # def post(self, request, *args, **kwargs):
+    #     return

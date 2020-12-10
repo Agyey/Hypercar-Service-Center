@@ -17,10 +17,13 @@ from django.urls import path
 from tickets.views import WelcomeView
 from tickets.views import MenuView
 from tickets.views import GetTicketView
-
+from tickets.views import ProcessingView
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('welcome/', WelcomeView.as_view()),
     path('menu/', MenuView.as_view()),
     path('get_ticket/<service_name>', GetTicketView.as_view()),
+    path('processing', ProcessingView.as_view()),
+    path('processing/', RedirectView.as_view(url='/processing'))
 ]
